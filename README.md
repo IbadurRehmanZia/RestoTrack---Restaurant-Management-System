@@ -41,17 +41,12 @@ To set up the RestoTrack system on your local machine, follow the steps below:
 
 ## Installation and Setup
 
-1. **Install the required dependencies**:
-   ```bash
-   pip install -r requirements.txt
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/restotrack.git
    cd restotrack
-Install the required dependencies:
-
-1. **Install the required dependencies**:
+2. **Install the required dependencies**:
    ```bash
    pip install -r requirements.txt
 
