@@ -43,28 +43,28 @@ To set up the RestoTrack system on your local machine, follow the steps below:
 
 
 1. **Clone the repository**:
-   ```bash
+ ```bash
    git clone https://github.com/yourusername/restotrack.git
    cd restotrack
    ```
 2. **Install the required dependencies**:
-   ```bash
+```bash
    pip install -r requirements.txt
    ```
 
 
 3. **Set up the database**:
-   ```bash
+```bash
   python manage.py migrate
    ```
 
 4. **Create a superuser (admin)**:
-  ```bash
+```bash
   python manage.py createsuperuser
   ```
 
 5. **Run the development server**:
-   ```bash
+```bash
    python manage.py runserver
    ```
 
