@@ -65,36 +65,37 @@ Copy code
 python manage.py runserver
 Open your web browser and navigate to http://127.0.0.1:8000 to access the system.
 
-Usage
-Login: Use the credentials of the cashier, manager, or admin to log in.
-Cashier: Navigate to the "Orders" section to process customer orders and payments.
-Manager: Go to the "Inventory" section to manage ingredients, menu items, and categories. The manager can monitor stock levels and add new inventory as needed.
-Admin: Use the "Admin Panel" to manage all aspects of the system, including user roles, menu items, inventory, and reports.
-Technologies Used
-Backend: Django (Python)
-Frontend: HTML, CSS, JavaScript, Bootstrap
-Database: SQLite (can be configured for other databases)
-Authentication: Django's built-in authentication system for role-based access
-Future Enhancements
-Sales Reporting: Add detailed sales analysis reports.
-Payment Integration: Integrate with online payment gateways.
-Mobile Application: Create a mobile app for better accessibility and usage.
-Advanced Forecasting: Improve predictive algorithms for inventory management.
-Contributing
-If you'd like to contribute to the project:
+## Usage
 
-Fork the repository.
-Create a new feature branch.
-Commit your changes.
-Submit a pull request.
+- **Login**: Use the credentials of the cashier, manager, or admin to log in.
+- **Cashier**: Navigate to the "Orders" section to process customer orders and payments.
+- **Manager**: Go to the "Inventory" section to manage ingredients, menu items, and categories. The manager can monitor stock levels and add new inventory as needed.
+- **Admin**: Use the "Admin Panel" to manage all aspects of the system, including user roles, menu items, inventory, and reports.
+
+## Technologies Used
+
+- **Backend**: Django (Python)
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap
+- **Database**: SQLite (can be configured for other databases)
+- **Authentication**: Django's built-in authentication system for role-based access
+
+## Future Enhancements
+
+- **Sales Reporting**: Add detailed sales analysis reports.
+- **Payment Integration**: Integrate with online payment gateways.
+- **Mobile Application**: Create a mobile app for better accessibility and usage.
+- **Advanced Forecasting**: Improve predictive algorithms for inventory management.
+
+## Contributing
+
+If you'd like to contribute to the project:
+- Fork the repository.
+- Create a new feature branch.
+- Commit your changes.
+- Submit a pull request.
+
 Feel free to open issues or feature requests to enhance the project further!
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+## License
 
-Developed by: Shardha Nand
-
-arduino
-Copy code
-
-This `README.md` is formatted for a GitHub repository, providing all the necessary information about t
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
