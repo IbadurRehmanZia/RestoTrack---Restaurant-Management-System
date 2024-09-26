@@ -1,0 +1,246 @@
+{% load static %}
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RestoTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'menu.css' %}"> -->
+    <link rel="icon" href="{% static 'resto logo wo name.svg' %}" type="image/x-icon">
+    <style>
+      .btn-hexcolor {
+        color: white;
+        background-color: #379; /* Your desired hex color */
+        border-color: #379; /* Your desired hex color */
+      }
+      .btn-hexcolor:hover {
+        background-color: white; /* Hover color */
+        border-color: #379; /* Hover color */
+      }
+    </style>
+</head>
+<body>
+    <!-------------------------- nav bar ------------------------------>
+    <!-- <div class="container-fluid navbarm"> -->
+      <header
+      class="container-fluid navbarm d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a
+          href="/"
+          class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+        >
+        <img src="{% static 'resto logo wo name.svg' %}" alt=" icon " height="60px" />
+        </a>
+
+        <!-- <a
+            href="/"
+            class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+          >
+            <h1 >RestoTrack</h1>
+          </a> -->
+      </div>
+
+      <ul class="col-7 col-md-auto mb-2 justify-content-center mb-md-0 listb">
+        <li>
+          <a href="{% url 'home_view'%}" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Home</strong></a
+          >
+        </li>
+
+        {% if request.user|has_group:"manager" %}
+<li class="nav-item dropdown">
+  <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <strong>Menu</strong>
+  </a>
+  <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item rounded-5" href="{% url 'menuview'%}"><strong>View Menu</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'add_category'%}"><strong>Add Category</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'show_category_and_add_product'%}"><strong>Add Product</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'show_inventory_and_product_and_add_ingredient'%}"><strong>Add Ingredient</strong></a>
+    
+  </div>
+</li>
+
+<li class="nav-item dropdown">
+  <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="menu2.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <strong>Inventory</strong>
+  </a>
+  <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item rounded-5" href="{% url 'add_inventory'%}"><strong>Add Inventory</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'viewinventory'%}"><strong>View Inventory</strong></a>
+    
+    
+    
+  </div>
+</li>
+{% endif %}
+
+        {% if request.user|has_group:"owner" %}
+
+
+        <li>
+          <a href="{% url 'menu_and_category_view'%}" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Orders</strong></a
+          >
+        </li>
+
+        <li>
+          <a href="{% url 'by_order'%}" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Sales</strong></a
+          >
+        </li>
+        
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Menu</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="{% url 'menu_view'%}"><strong>View Menu</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'add_category'%}"><strong>Add Category</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'show_category_and_add_product'%}"><strong>Add Product</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'show_inventory_and_product_and_add_ingredient'%}"><strong>Add Ingredient</strong></a>
+              
+            </div>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="menu2.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Inventory</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="{% url 'add_inventory'%}"><strong>Add Inventory</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'viewinventory'%}"><strong>View Inventory</strong></a>
+              
+              
+              
+            </div>
+          </li>
+
+
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <strong>Report</strong>
+          </a>
+          <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item rounded-5" href="{% url 'predict_cost'%}"><strong>Prediction</strong></a>
+            <!-- <a class="dropdown-item rounded-5" href=""><strong>Stats</strong></a> -->
+            <!-- <a class="dropdown-item rounded-5" href="#" onclick="redirectToStats()"><strong>Stats</strong></a> -->
+
+
+            
+          </div>
+        </li>
+
+        {% endif %}
+
+        {% if request.user|has_group:"cashier" %}
+<li>
+  <a href="{% url 'menu_and_category_view'%}" class="nav-link px-3 py-3 rounded-5"
+    ><strong>Orders</strong></a
+  >
+</li>
+{% endif %}
+
+       
+        
+      </ul>
+
+      <div class="col-md-2 text-end logoutbtn">
+        <!-- <button type="button" class="btn btn-outline me-2">Logout</button> -->
+        <button type="button" class="btn btn" id="logoutButton">LogOut</button>
+
+        <script>
+          // JavaScript code to handle the button click event
+          document
+            .getElementById("logoutButton")
+            .addEventListener("click", function () {
+              window.location.href = "index.html";
+            });
+        </script>
+    
+       
+        
+        
+      </div>
+   
+   
+
+    <!-------------------------- nav bar ------------------------------>
+
+   
+
+</header>
+
+   
+
+    <!-------------------------- nav bar ------------------------------>
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form id="form" method="post" action="{% url 'add_inventory' %}" enctype="multipart/form-data">
+
+              {% csrf_token %}
+          
+              <!-- Your existing form content -->
+              <div class="mb-3">
+                <label for="InventoryName" class="form-label">Inventory Name:</label>
+                <input type="text" class="form-control" id="InventoryName" name="inventory_name">
+              </div>
+
+              <div class="mb-3">
+                <label for="Available" class="form-label">Available:</label>
+                <input type="text" class="form-control" id="Available" name="availability">
+              </div>
+
+              <div class="mb-3">
+              <label for="unit" class="form-label">Unit:</label>
+                      <select class="form-select" id="unit" name="unit_choices">
+                        <option value="kg">kg</option>
+                        <option value="pcs">pcs</option>
+                      </select>
+                    </div>
+
+                    {% if success_message %}
+                    <p>{{ success_message }}</p>
+                 {% endif %}
+                
+                      <div class="text-center mt-3 mb-3">
+                        <button type="submit" class="btn btn-hexcolor btn-lg">Add Inventory</button>
+                      </form>
+                      </div>
+                      
+
+
+      
+              
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+      
+      
+  
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+    
+      
+  
+
+  

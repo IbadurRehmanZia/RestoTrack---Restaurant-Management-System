@@ -1,0 +1,103 @@
+/* ----------------------order page ---------------------------------------------*/
+
+.navbarm{
+    background-color: whitesmoke;
+    color: #379;
+}
+
+.navbarm ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbarm li a{
+    color: #379;
+}
+
+.navbarm li a:hover{
+    color: white;
+    background-color: #379;
+}
+
+.navbarm li{
+    display: inline-block;
+}
+
+.logoutbtn button{
+    color: white;
+    background-color: #379;
+    outline-color: #379;
+}
+
+.logoutbtn button:hover{
+    color: #379;
+    background-color: white;
+    outline-color: #379;
+}
+
+
+.categories-tile{
+    color: white;
+    background-color: #379;
+ 
+}
+
+.list-group-mine .list-group-item {
+
+    background-color: white;
+    color: #379;
+    border: 0px;
+    
+   
+  }
+  
+  .list-group-mine .list-group-item:hover {
+    color: white;
+    background-color: #379;
+  }
+
+
+
+
+
+
+#cart-head ul li{
+    display: inline-block;
+margin-left: 15px;
+}
+
+#cart-head ul{
+    list-style: none;
+    background-color: #379;
+    color: white;
+}
+
+#cart-head ul li{
+    padding-right: 5px;
+}
+
+.cart-title {
+background-color: #379;
+color: white;
+}
+.cart-title img{
+    width: 30px;
+    height:30px;
+    color: white;
+
+}
+
+.checkoutbtn{
+    color: #379;
+    background-color: rgb(255, 255, 255);
+}
+
+.checkoutbtn:hover{
+    color: #379;
+    background-color: white;
+}
+
+
+
+
+

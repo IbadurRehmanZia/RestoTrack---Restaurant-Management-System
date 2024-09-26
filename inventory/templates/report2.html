@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RestoTrack</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+    <link rel="icon" href="{% static 'resto logo wo name.svg' %}" type="image/x-icon">
+
+    <style>
+
+        /* body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        } */
+        .btn-hexcolor {
+          color: white;
+          background-color: #379; /* Your desired hex color */
+          border-color: #379; /* Your desired hex color */
+        }
+        .btn-hexcolor:hover {
+          background-color: white; /* Hover color */
+          border-color: #379; /* Hover color */
+        }
+        .body-content {
+          margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } 
+        .dashboard-container {
+          margin: 0;
+            padding: 0;
+          width: 100%;
+            max-width: 1500px;
+            height: 90vh;
+        }
+        
+        iframe {
+          margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+      </style>
+  </head>
+
+  <body>
+    <!-------------------------- nav bar ------------------------------>
+    <!-- <div class="container-fluid navbarm"> -->
+    <header
+      class="container-fluid navbarm d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a
+          href="/"
+          class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+        >
+          <img src="resto logo wo name.svg" alt="icon" height="60px" />
+        </a>
+
+        <!-- <a
+            href="/"
+            class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+          >
+            <h1 >RestoTrack</h1>
+          </a> -->
+      </div>
+
+      <ul class="col-7 col-md-auto mb-2 justify-content-center mb-md-0 listb">
+        <li>
+          <a href="home.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Home</strong></a
+          >
+        </li>
+        <li>
+          <a href="cartitem final.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Orders</strong></a
+          >
+        </li>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="cartitem final.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Sales</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="byorder.html"><strong>By Order</strong></a>
+              <a class="dropdown-item rounded-5" href="bycategory.html"><strong>By Category</strong></a>
+              
+        
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="menu2.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Menu</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="addcategory.html"><strong>Add Category</strong></a>
+              <a class="dropdown-item rounded-5" href="addproduct.html"><strong>Add Product</strong></a>
+              <a class="dropdown-item rounded-5" href="menu2.html"><strong>Edit Product</strong></a>
+              
+            </div>
+          </li>
+          
+        <li>
+          <a href="inventory.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Inventory</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Employees</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Report</strong></a
+          >
+        </li>
+        
+      </ul>
+
+      <div class="col-md-2 text-end logoutbtn">
+        <!-- <button type="button" class="btn btn-outline me-2">Logout</button> -->
+        <button type="button" class="btn btn" id="logoutButton">LogOut</button>
+
+        <script>
+          // JavaScript code to handle the button click event
+          document
+            .getElementById("logoutButton")
+            .addEventListener("click", function () {
+              window.location.href = "index.html";
+            });
+        </script>
+      </div>
+    </header>
+
+
+   
+
+
+      
+      
+  
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <div class="body-content">
+      <div class=" dashboard-container">
+        <iframe title="restotrack_dashboard_f" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=779c7085-8d17-47e6-86f1-33cd17e5ab89&autoAuth=true&ctid=007e7528-fe18-4a1a-a562-5a10a02f15c7" frameborder="0" allowFullScreen="true"></iframe>
+        
+        </div>
+      </div>
+           
+            
+      
+
+</body>
+</html>
+
+
+    
+      
+  
+
+  

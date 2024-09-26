@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Accordion with Independent Collapsible Panels</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="menu.css" />
+<!-- <link rel="stylesheet" href="inventory.css"> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+  <!-------------------------- nav bar ------------------------------>
+    <!-- <div class="container-fluid navbarm"> -->
+      <header
+      class="container-fluid navbarm d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a
+          href="/"
+          class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+        >
+          <img src="resto logo wo name.svg" alt="icon" height="60px" />
+        </a>
+
+        <!-- <a
+            href="/"
+            class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+          >
+            <h1 >RestoTrack</h1>
+          </a> -->
+      </div>
+
+      <ul class="col-7 col-md-auto mb-2 justify-content-center mb-md-0 listb">
+        <li>
+          <a href="home.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Home</strong></a
+          >
+        </li>
+        <li>
+          <a href="cartitem final.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Orders</strong></a
+          >
+        </li>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="cartitem final.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Sales</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="byorder.html"><strong>By Order</strong></a>
+              <a class="dropdown-item rounded-5" href="bycategory.html"><strong>By Category</strong></a>
+              
+              
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="menu2.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Menu</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="addcategory.html"><strong>Add Category</strong></a>
+              <a class="dropdown-item rounded-5" href="addproduct.html"><strong>Add Product</strong></a>
+              <a class="dropdown-item rounded-5" href="menu2.html"><strong>Edit Product</strong></a>
+              
+            </div>
+          </li>
+          
+        <li>
+          <a href="inventory.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Inventory</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Employees</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Report</strong></a
+          >
+        </li>
+        
+      </ul>
+
+      <div class="col-md-2 text-end logoutbtn">
+        <!-- <button type="button" class="btn btn-outline me-2">Logout</button> -->
+        <button type="button" class="btn btn" id="logoutButton">LogOut</button>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+          // JavaScript code to handle the button click event
+          document
+            .getElementById("logoutButton")
+            .addEventListener("click", function () {
+              window.location.href = "index.html";
+            });
+        </script>
+      </div>
+    </header>
+
+
+   
+
+    <!-------------------------- nav bar ------------------------------>
+
+
+<!--------------------------------------- accordio main container --------------------------------------------------->
+<div class="container-fluid">
+<div class="m-4">
+
+<!--------------------------------------- accordio container --------------------------------------------------->
+
+    <div class="accordion" id="myAccordion">
+
+<!--------------------------------------- accordio item --------------------------------------------------->
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne">CHICKEN</button>									
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse">
+                <div class="card-body">
+
+<!--------------------------------------------- cards ------------------------------------------------------------------------------------------>
+                    
+<div class="row">
+
+
+<div class="card col-3 text-white  mb-3" style="background-color: #2196f3; max-width: 12rem; max-height: 10em; margin-left: 6em; margin-right: 3em;">
+                        <div class="card-header">Available</div>
+                        <div class="card-body">
+                          <!-- <h5 class="card-title">Primary card title</h5> -->
+                          <p class="card-text">30 kg</p>
+                        </div>
+                      </div>
+
+                      <div class="card  text-white  mb-3" style="background-color: #ffc107;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                        <div class="card-header">Utilized</div>
+                        <div class="card-body">
+                          <!-- <h5 class="card-title">Primary card title</h5> -->
+                          <p class="card-text">15 kg</p>
+                        </div>
+                      </div>
+
+
+                      <div class="card  text-white  mb-3" style="background-color: #b19548;max-width: 12rem; max-height: 10rem;  margin-left: 3rem; margin-right: 3rem;">
+                        <div class="card-header">Needed</div>
+                        <div class="card-body">
+                          <!-- <h5 class="card-title">Primary card title</h5> -->
+                          <p class="card-text">10 kg</p>
+                        </div>
+                      </div>
+
+                      <div class="card  text-white  mb-3" style="background-color: #a59b7c;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                        <div class="card-header">Total</div>
+                        <div class="card-body">
+                          <!-- <h5 class="card-title">Primary card title</h5> -->
+                          <p class="card-text">45 kg</p>
+                        </div>
+                      </div>
+
+                      
+
+</div>
+<!--------------------------------------------- cards ------------------------------------------------------------------------------------------>    
+<div id="chickenChartContainer">
+  <canvas id="chickenChart"></canvas>
+</div>
+                </div>
+            </div>
+        </div>
+
+<!--------------------------------------- accordio item ---------------------------------------------------> 
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="beef">
+                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">BEEF</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse show">
+                <div class="card-body">
+ <!--------------------------------------------- cards ------------------------------------------------------------------------------------------>
+                    
+<div class="row">
+
+
+    <div class="card col-3 text-white  mb-3" style="background-color: #2196f3; max-width: 12rem; max-height: 10rem; margin-left: 6rem; margin-right: 3rem;">
+                            <div class="card-header">Available</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">40 kg</p>
+                            </div>
+                          </div>
+    
+                          <div class="card  text-white  mb-3" style="background-color: #ffc107;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Utilized</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">20 kg</p>
+                            </div>
+                          </div>
+    
+    
+                          <div class="card  text-white  mb-3" style="background-color: #b19548;max-width: 12rem; max-height: 10rem;  margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Needed</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">10 kg</p>
+                            </div>
+                          </div>
+    
+                          <div class="card  text-white  mb-3" style="background-color: #a59b7c;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Total</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">60 kg</p>
+                            </div>
+                          </div>
+    
+    </div>
+    <!--------------------------------------------- cards ------------------------------------------------------------------------------------------>    
+    <div id="beefChartContainer">
+      <canvas id="beefChart"></canvas>
+  </div>
+                    </div>
+                </div>
+            </div> 
+     
+           
+<!--------------------------------------- accordio item --------------------------------------------------->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">RICE</button>                     
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse">
+                <div class="card-body">
+                   <!--------------------------------------------- cards ------------------------------------------------------------------------------------------>
+                    
+<div class="row">
+
+
+    <div class="card col-3 text-white  mb-3" style="background-color: #2196f3; max-width: 12rem; max-height: 10rem; margin-left: 6rem; margin-right: 3rem;">
+                            <div class="card-header">Available</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">30 kg</p>
+                            </div>
+                          </div>
+    
+                          <div class="card  text-white  mb-3" style="background-color: #ffc107;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Utilized</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">10 kg</p>
+                            </div>
+                          </div>
+    
+    
+                          <div class="card  text-white  mb-3" style="background-color: #b19548;max-width: 12rem; max-height: 10rem;  margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Needed</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">15 kg</p>
+                            </div>
+                          </div>
+    
+                          <div class="card  text-white  mb-3" style="background-color: #a59b7c;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Total</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">40 kg</p>
+                            </div>
+                          </div>
+    
+    </div>
+    <!--------------------------------------------- cards ------------------------------------------------------------------------------------------>    
+    
+    <div id="riceChartContainer">
+      <canvas id="riceChart"></canvas>
+  </div>
+                    </div>
+                </div>
+            </div>
+     
+            
+<!--------------------------------------- accordio item --------------------------------------------------->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour">FLOUR</button>                     
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse">
+                <div class="card-body">
+                    <!--------------------------------------------- cards ------------------------------------------------------------------------------------------>
+                    
+<div class="row">
+
+
+    <div class="card col-3 text-white  mb-3" style="background-color: #2196f3; max-width: 12rem; max-height: 10rem; margin-left: 6rem; margin-right: 3rem;">
+                            <div class="card-header">Available</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">40 kg</p>
+                            </div>
+                          </div>
+    
+                          <div class="card  text-white  mb-3" style="background-color: #ffc107;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Utilized</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">15 kg</p>
+                            </div>
+                          </div>
+    
+    
+                          <div class="card  text-white  mb-3" style="background-color: #b19548;max-width: 12rem; max-height: 10rem;  margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Needed</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">10 kg</p>
+                            </div>
+                          </div>
+    
+                          <div class="card  text-white  mb-3" style="background-color: #a59b7c;max-width: 12rem; max-height: 10rem; margin-left: 3rem; margin-right: 3rem;">
+                            <div class="card-header">Total</div>
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Primary card title</h5> -->
+                              <p class="card-text">55 kg</p>
+                            </div>
+                          </div>
+    
+    </div>
+    <!--------------------------------------------- cards ------------------------------------------------------------------------------------------>    
+    
+    <div id="flourChartContainer">
+      <canvas id="flourChart"></canvas>
+  </div>
+                    </div>
+                </div>
+            </div>
+    
+     
+
+<!--------------------------------------- accordio container --------------------------------------------------->
+
+</div>
+
+<!--------------------------------------- accordio main container --------------------------------------------------->
+<div class="container-fluid">
+<div class="d-grid gap-2 col-6 mx-auto mt-4">
+    <button class="btn btn-primary disabled" id="redirectbutton1" type="button">P R E D I C T  - I N V E N T O R Y</button>
+    <button class="btn btn-primary"  id="redirectbutton2" type="button">  R E S T O C K   -  I N V E N T O R Y</button>
+    <button  class="btn btn-primary " id="redirectbutton3"  type="button"> ADD NEW PRODUCT</button>
+
+    <script src="script.js"></script>
+  </div>
+
+</div>
+
+
+<div class="container-fluid">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <img src="restologo wo title.png" height="30" width="24" alt="logo">
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2023 RestoTrack, Inc</span>
+      </div>
+  
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    
+
+    const redirectbutton2 = document.getElementById('redirectbutton2')
+    const redirectbutton3 = document.getElementById('redirectbutton3')
+    redirectbutton2.addEventListener('click',function(){
+        window.location.href='restock inventory.html';
+    });
+
+    redirectbutton3.addEventListener('click',function(){
+        window.location.href='add new product.html';
+    });
+  
+
+    function createBarChart(itemName, available, utilized, needed) {
+        const ctx = document.getElementById(`${itemName}Chart`).getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Available', 'Utilized', 'Needed'],
+                datasets: [{
+                    label: `${itemName} Inventory`,
+                    data: [available, utilized, needed],
+                    backgroundColor: ['#2196f3', '#ffc107', '#b19548'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // Call the function for each item
+    createBarChart('chicken', 30, 15, 10); // Example values, replace with actual data
+    createBarChart('beef', 40, 20, 10); // Example values, replace with actual data
+    createBarChart('rice', 30, 10, 15); // Example values, replace with actual data
+    createBarChart('flour', 40, 15, 10); // Example values, replace with actual data
+
+
+
+</script>
+</body>
+</html>                            

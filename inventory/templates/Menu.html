@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RestoTrack</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="icon" href="resto logo wo name.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+
+  <body>
+    <!-------------------------- nav bar ------------------------------>
+    <!-- <div class="container-fluid navbarm"> -->
+    <header
+      class="container-fluid navbarm d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a
+          href="/"
+          class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+        >
+          <img src="resto logo wo name.svg" alt="icon" height="60px" />
+        </a>
+
+        <!-- <a
+            href="/"
+            class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+          >
+            <h1 >RestoTrack</h1>
+          </a> -->
+      </div>
+
+      <ul class="col-7 col-md-auto mb-2 justify-content-center mb-md-0 listb">
+        <li>
+          <a href="home.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Home</strong></a
+          >
+        </li>
+        <li>
+          <a href="order.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Orders</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Sales</strong></a
+          >
+        </li>
+        <li>
+          <a href="inventory.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Inventory</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Employees</strong></a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Report</strong></a
+          >
+        </li>
+        <li>
+          <a href="Menu.html" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Menu</strong></a
+          >
+        </li>
+      </ul>
+
+      <div class="col-md-2 text-end logoutbtn">
+        <!-- <button type="button" class="btn btn-outline me-2">Logout</button> -->
+        <button type="button" class="btn btn" id="logoutButton">LogOut</button>
+
+        <script>
+          // JavaScript code to handle the button click event
+          document
+            .getElementById("logoutButton")
+            .addEventListener("click", function () {
+              window.location.href = "index.html";
+            });
+        </script>
+      </div>
+    </header>
+    <!-- </div> -->
+
+    <!-------------------------- nav bar ------------------------------>
+
+    <!-------------------------- menu item ------------------------------>
+    <div class="container">
+      <div class="row menu-category">
+        <div class="col-lg-6 text-end">
+          <img
+            class="menu-category-logo"
+            src="burger-logo.svg"
+            alt="burger icon"
+          />
+        </div>
+        <div class="col-lg-6 text-start">
+          <h1 class="display1">Burgers</h1>
+        </div>
+      </div>
+
+      
+
+
+      <div class="row menu-items my-4 py-2">
+        <div class="col-lg-1 text-center">
+          <img
+            class="menu-item-picture"
+            src="imgs/chicken burger.jpg"
+            alt="burger icon"
+          />
+        </div>
+        <div class="col-lg-2 text-center">
+          <h4>br-123</h4>
+        </div>
+        <div class="col-lg-4 text-center">
+          <h4 >Chicken Cheese Burger</h4>
+        </div>
+
+        <div class="col-lg-2 text-center">
+          <h4>Rs. 430</h4>
+        </div>
+
+        <div class="col-lg-1 text-center">
+          <button class="btn btn-sm btn-warning">Edit</button>
+        </div>
+
+        <div class="col-lg-1 text-center">
+          <button class="btn btn-sm btn-primary">Block</button>
+        </div>
+
+        <div class="col-lg-1 text-center">
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </div>
+
+
+      </div>
+
+      
+
+
+      <div class="row menu-items my-4 py-2">
+        <div class="col-lg-1 text-center">
+          <img
+            class="menu-item-picture"
+            src="burger-logo.svg"
+            alt="burger icon"
+          />
+        </div>
+        <div class="col-lg-2 text-center">
+          <h4>br-123</h4>
+        </div>
+        <div class="col-lg-4 text-center">
+          <h4 >Chicken Cheese Burger</h4>
+        </div>
+
+        <div class="col-lg-2 text-center">
+          <h4>Rs. 430</h4>
+        </div>
+
+        <div class="col-lg-1 text-center">
+          <button class="btn btn-sm btn-warning">Edit</button>
+        </div>
+
+        <div class="col-lg-1 text-center">
+          <button class="btn btn-sm btn-primary">Block</button>
+        </div>
+
+        <div class="col-lg-1 text-center">
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </div>
+
+
+      </div>
+
+      
+
+    </div>
+
+    <!-------------------------- menu item ------------------------------>
+  </body>
+</html>

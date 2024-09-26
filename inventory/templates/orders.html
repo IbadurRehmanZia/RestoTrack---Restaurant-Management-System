@@ -1,0 +1,398 @@
+{% load static %}
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RestoTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'menu.css' %}"> -->
+    <link rel="icon" href="{% static 'resto logo wo name.svg' %}" type="image/x-icon">
+</head>
+<body>
+    <!-------------------------- nav bar ------------------------------>
+    <!-- <div class="container-fluid navbarm"> -->
+      <header
+      class="container-fluid navbarm d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3  border-bottom"
+    >
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a
+          href="/"
+          class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+        >
+        <img src="{% static 'resto logo wo name.svg' %}" alt=" icon " height="60px" />
+        </a>
+
+        <!-- <a
+            href="/"
+            class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none"
+          >
+            <h1 >RestoTrack</h1>
+          </a> -->
+      </div>
+
+      <ul class="col-7 col-md-auto mb-2 justify-content-center mb-md-0 listb">
+        <li>
+          <a href="{% url 'home_view'%}" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Home</strong></a
+          >
+        </li>
+
+        {% if request.user|has_group:"manager" %}
+<li class="nav-item dropdown">
+  <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <strong>Menu</strong>
+  </a>
+  <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item rounded-5" href="{% url 'menuview'%}"><strong>View Menu</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'add_category'%}"><strong>Add Category</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'show_category_and_add_product'%}"><strong>Add Product</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'show_inventory_and_product_and_add_ingredient'%}"><strong>Add Ingredient</strong></a>
+    
+  </div>
+</li>
+
+<li class="nav-item dropdown">
+  <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="menu2.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <strong>Inventory</strong>
+  </a>
+  <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item rounded-5" href="{% url 'add_inventory'%}"><strong>Add Inventory</strong></a>
+    <a class="dropdown-item rounded-5" href="{% url 'viewinventory'%}"><strong>View Inventory</strong></a>
+    
+    
+    
+  </div>
+</li>
+{% endif %}
+
+        {% if request.user|has_group:"owner" %}
+
+
+        <li>
+          <a href="{% url 'menu_and_category_view'%}" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Orders</strong></a
+          >
+        </li>
+
+        <li>
+          <a href="{% url 'by_order'%}" class="nav-link px-3 py-3 rounded-5"
+            ><strong>Sales</strong></a
+          >
+        </li>
+        
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Menu</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="{% url 'menu_view'%}"><strong>View Menu</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'add_category'%}"><strong>Add Category</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'show_category_and_add_product'%}"><strong>Add Product</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'show_inventory_and_product_and_add_ingredient'%}"><strong>Add Ingredient</strong></a>
+              
+            </div>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="menu2.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>Inventory</strong>
+            </a>
+            <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item rounded-5" href="{% url 'add_inventory'%}"><strong>Add Inventory</strong></a>
+              <a class="dropdown-item rounded-5" href="{% url 'viewinventory'%}"><strong>View Inventory</strong></a>
+              
+              
+              
+            </div>
+          </li>
+
+
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link px-3 py-3 rounded-5 dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <strong>Report</strong>
+          </a>
+          <div class="dropdown-menu rounded-5" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item rounded-5" href="{% url 'predict_cost'%}"><strong>Prediction</strong></a>
+            <!-- <a class="dropdown-item rounded-5" href=""><strong>Stats</strong></a> -->
+            <!-- <a class="dropdown-item rounded-5" href="#" onclick="redirectToStats()"><strong>Stats</strong></a> -->
+
+
+            
+          </div>
+        </li>
+
+        {% endif %}
+
+        {% if request.user|has_group:"cashier" %}
+<li>
+  <a href="{% url 'menu_and_category_view'%}" class="nav-link px-3 py-3 rounded-5"
+    ><strong>Orders</strong></a
+  >
+</li>
+{% endif %}
+
+       
+        
+      </ul>
+
+      <div class="col-md-2 text-end logoutbtn">
+        <!-- <button type="button" class="btn btn-outline me-2">Logout</button> -->
+        <button type="button" class="btn btn" id="logoutButton">LogOut</button>
+
+        <script>
+          // JavaScript code to handle the button click event
+          document
+            .getElementById("logoutButton")
+            .addEventListener("click", function () {
+              window.location.href = "index.html";
+            });
+        </script>
+    
+       
+        
+        
+      </div>
+   
+   
+
+    <!-------------------------- nav bar ------------------------------>
+
+   
+
+</header>
+
+
+   
+
+    <!-------------------------- nav bar ------------------------------>
+
+ <!-- Middle area -->
+<div class="container-fluid">
+  <!-- scrolls by categories -->
+  <div class="row">
+      <!-- Side menu for categories -->
+      <div class="col-2">
+          <!-- Category list -->
+          <div class="container sticky-top sticky-bottom">
+              <div class="categories-tile rounded-top text-center">
+                  <h3 class="py-2">Categories</h3>
+              </div>
+              <div id="list-example" class="list-group list-group-mine">
+                  <!-- Category links -->
+                  {% for category in categories %}
+                  <a class="list-group-item list-group-item-action" href="#list-item-{{ category.category_id }}">{{ category.category_name }}</a>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+
+      <!-- Product menu -->
+      <div class="col-6" id="foodMenu">
+          {% for category in categories %}
+          <h1 class="category-title text-center" id="list-item-{{ category.category_id }}">{{ category.category_name }}</h1>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+              {% for product in category.product_set.all %}
+              <div class="col product">
+                <div class="card h-100" onclick="createOrUpdateItem(this, '{{ product.product_id }}')">
+                    <img src="{{ product.product_image.url }}" class="card-img-top" alt="{{ product.product_name }}">
+                    <div class="card-body">
+                        <input type="hidden" name="product_id" value="{{ product.product_id }}">
+                        <h5 class="card-title product-name">{{ product.product_name }}</h5>
+                        <p class="card-text product-price">RS.{{ product.price }}</p>
+                    </div>
+                </div>
+            </div>            
+              {% endfor %}
+          </div>
+          {% endfor %}
+      </div>
+
+    <!-- Cart -->
+<div class="col-4 cart-title rounded-top">
+  <!-- Your cart items -->
+  <h3><i class="bi bi-cart my-3 py-3"></i>Cart</h3>
+  <div class="card">
+      <div class="card-body p-4" id="item-container">
+          <!-- Your cart items will be dynamically added here -->
+      </div>
+  </div>
+  <!-- Subtotal and total -->
+  <hr class="my-4">
+  <div class="d-flex justify-content-between">
+      <p class="mb-2"><i>Subtotal:</i> <span id="subtotal">Rs.0.00</span></p>
+  </div>
+  <div class="d-flex justify-content-between mb-4">
+      <p class="mb-2"><i>Total (Incl. 10% tax):</i> <span id="total">Rs.0.00</span></p>
+  </div>
+  <!-- Checkout button -->
+  <!-- <button type="button" class=" btn btn-primary  btn-lg" id="checkoutButton">
+      <div class="d-flex justify-content-between">
+          <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+      </div>
+      
+  </button> -->
+
+
+  <div class="d-grid gap-2  fw-1 fs-3 btn">
+    <button class="btn btn-outline-light fw-1 fs-3 btn" type="button" id="checkoutButton">Place Order !</button>
+    
+  </div>
+ 
+
+</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Your additional JavaScript -->
+  <script>
+   
+
+function createOrUpdateItem(clickedElement, productId) {
+  const productName = clickedElement.querySelector('.product-name').textContent.trim();
+  const productPrice = parseFloat(clickedElement.querySelector('.product-price').textContent.trim().replace('RS.', ''));
+
+  const itemContainer = document.getElementById('item-container');
+  const existingItem = itemContainer.querySelector(`.item[data-name="${productName}"]`);
+
+  if (existingItem) {
+    const quantityInput = existingItem.querySelector('.form-control');
+    quantityInput.stepUp();
+  } else {
+    const newItem = document.createElement('div');
+    newItem.className = 'item card mt-2 mb-3 mb-lg-0';
+    newItem.setAttribute('data-name', productName);
+
+    newItem.innerHTML = `
+      <div class="card-body">
+        <input type="hidden" name="product_id" value="${productId}">
+        <div class="d-flex justify-content-between">
+          <div class="col-4 ms-3">
+            <h8><i>${productName}</i></h8>
+          </div>
+          <div class="col-5 d-flex align-items-center">
+            <button class="btn btn-link px-1" onclick="updateQuantity(this, -1, ${productPrice})">
+              <i class="bi bi-dash-lg"></i>
+            </button>
+            <input id="quantity-burger" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" data-price="${productPrice}" oninput="updateQuantity(this, 0, ${productPrice})"/>
+            <button class="btn btn-link px-1" onclick="updateQuantity(this, 1, ${productPrice})">
+              <i class="bi bi-plus-lg"></i>
+            </button>
+          </div>
+          <div class="d-flex">
+            <p class="item-price mb-0">Rs. ${productPrice}</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    itemContainer.appendChild(newItem);
+  }
+
+  updateTotalPrice();
+}
+
+function updateQuantity(button, value, productPrice) {
+  const quantityInput = button.parentNode.querySelector('input[type=number]');
+  let newQuantity = parseInt(quantityInput.value) + value;
+  if (newQuantity < 0) {
+    newQuantity = 0;
+  }
+  quantityInput.value = newQuantity;
+
+  updateTotalPrice();
+}
+
+function updateTotalPrice() {
+  const allItems = document.querySelectorAll('.item');
+  let subtotal = 0;
+
+  allItems.forEach(item => {
+    const price = parseFloat(item.querySelector('.item-price').textContent.replace('Rs. ', ''));
+    const itemQuantity = parseFloat(item.querySelector('input[type=number]').value);
+    subtotal += price * itemQuantity;
+
+    if (itemQuantity === 0) {
+      item.parentNode.removeChild(item);
+    }
+  });
+
+  const subtotalElement = document.getElementById('subtotal');
+  subtotalElement.textContent = `Rs. ${subtotal.toFixed(2)}`;
+
+  // Update Total (Subtotal + 10% tax)
+  const total = subtotal * 1.1;
+  const totalElement = document.getElementById('total');
+  totalElement.textContent = `Rs. ${total.toFixed(2)}`;
+}
+
+document.getElementById('checkoutButton').addEventListener('click', function () {
+    const currentDate = new Date().toISOString().split('T')[0];
+    // const cashierName = 'ibad'; // Assuming cashier name is always 'ibad'
+
+    const items = Array.from(document.querySelectorAll('.item')).map(item => {
+        const productId = item.querySelector('input[name="product_id"]').value;
+        const productName = item.querySelector('h8').textContent; // Changed selector to match the correct element
+
+        const price = parseFloat(item.querySelector('.item-price').textContent.replace('Rs. ', ''));
+        const quantity = parseInt(item.querySelector('input[type="number"]').value);
+        const subTotal = price * quantity;
+
+        return { product_id: productId, product_name: productName, price, quantity, sub_total: subTotal };
+    });
+
+    const totalAmount = parseFloat(document.getElementById('total').textContent.replace('Rs. ', ''));
+
+    const data = {
+        order_date: currentDate,
+        total_amount: totalAmount,
+        items: items
+    };
+
+    fetch('/orders/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle success
+            const itemContainer = document.getElementById('item-container');
+            itemContainer.innerHTML = ''; // Clear all cart items
+            updateTotalPrice(); // Update total price to 0
+            console.log('Order placed successfully');
+            alert('Order placed successfully'); // Display success message
+        } else {
+            // Handle error
+            console.error('Failed to place order');
+            alert('Failed to place order'); // Display error message
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error:', error); // Display error message
+    });
+});
+
+
+
+
+</script>
+ 
+</body>
+
+</html>

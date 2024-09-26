@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login Form | RestoTrack </title>
+    <link rel="icon" href="restologo wo title.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" onsubmit="return authenticateUser();">
+        <div class="title">Login</div>
+        <div class="input-box underline">
+          <input id="username" type="text" placeholder="Enter Your Username" required>
+          <div class="underline"></div>
+        </div>
+        <div class="input-box">
+          <input id="password" type="password" placeholder="Enter Your Password" required>
+          <div class="underline"></div>
+        </div>
+        <div class="input-box button">
+          <input type="submit" value="Continue">
+        </div>
+      </form>
+      <div id="message" style="color: red;"></div>
+      <div class="option">or Connect With Social Media</div>
+      <div class="twitter">
+        <a href="https://twitter.com/i/flow/login"><i class="fab fa-twitter"></i>Sign in With Twitter</a>
+      </div>
+      <div class="facebook">
+        <a href="https://www.facebook.com/login.php?login_attempt=1"><i class="fab fa-facebook-f"></i>Sign in With Facebook</a>
+      </div>
+    </div>
+
+    <script>
+      function authenticateUser() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var message = document.getElementById("message");
+
+        // Check user credentials
+        if (
+          (username === "tuaseen" && password === "tuaseen123") ||
+          (username === "umer" && password === "umer123") ||
+          (username === "ibad" && password === "ibad123")
+        ) {
+          // Redirect to home.html
+          window.location.href = 'cartitem final.html';
+          return false; // Prevent form submission
+        } else {
+          message.textContent = "Invalid credentials";
+          return false; // Prevent form submission
+        }
+      }
+    </script>
+  </body>
+</html>

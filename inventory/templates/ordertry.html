@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestoTrack</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="icon" href="restologo wo title.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+  <!-- nav bar -->
+  <div class="container-fluid  navbarm">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none">
+          <img src="restologo wo title.png" alt="icon" height="50px">
+        </a>
+
+        <a href="/" class="d-inline-flex link-body-emphasis justify-content-center text-decoration-none">
+          <img src="reso name.png" alt="icon" height="50px" width="100px">
+        </a>
+        
+          
+       
+        
+      
+        
+      </div>
+
+      <ul class=" col-6 col-md-auto mb-2 justify-content-center mb-md-0 listb">
+        <li><a href="home.html" class="nav-link px-2 ">Home</a></li>
+        <li><a href="order.html" class="nav-link px-2">Orders</a></li>
+        <li><a href="#" class="nav-link px-2">Sales</a></li>
+        <li><a href="inventory.html" class="nav-link px-2">Inventory</a></li>
+        <li><a href="#" class="nav-link px-2">Employees</a></li>
+        <li><a href="#" class="nav-link px-2">Report</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end logoutbtn">
+        <!-- <button type="button" class="btn btn-outline me-2">Logout</button> -->
+        <button type="button" class="btn btn" id="logoutButton">LogOut</button>
+
+        <script>
+            // JavaScript code to handle the button click event
+            document.getElementById('logoutButton').addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        </script>
+      </div>
+    </header>
+  </div>
+
+<!-- middle area -->
+
+  <div class="container-fluid">
+<!-- scrolls by categoroies -->
+  <div class="row">
+    <div class="col-2 ">
+      <div class="container sticky-top sticky-bottom">
+        <div class="categories-tile  rounded-top text-center">
+      <h3>Categories</h3>
+    </div>
+      <div id="list-example" class="list-group list-group-mine">
+        <a class="list-group-item list-group-item-action" href="#list-item-burger">Burgers</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-pasta">Pasta</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-pizza">Pizza</a>
+        <a class="list-group-item list-group-item-action " href="#list-item-sandwich">Sandwich</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-6">
+      <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+       
+        <!-- products -->
+        <div class="container" id="list-item-burger">
+        <h4  class="category-title text-center">Burgers</h4>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/double decker.jpg" class="card-img-top" alt="double decker">
+              <div class="card-body">
+                <h5 class="card-title">Double Decker Chicken Burger</h5>
+                <p class="card-text">Rs. 540</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/chicken cheese.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Cheese Burger</h5>
+                <p class="card-text">Rs. 360</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/chicken cheese.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Burger</h5>
+                <p class="card-text">Rs. 1000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/beef burger.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Beef Burger</h5>
+                <p class="card-text">Rs. 1000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      
+        <h4 id="list-item-pasta" class="category-title text-center">Pasta</h4>
+
+                <!-- products -->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/spaghetti1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Spaghetti Bolognese</h5>
+                        <p class="card-text">Rs. 595</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Chicken Chowmein.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Chicken Chowmein</h5>
+                        <p class="card-text">Rs. 522</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Chicken Tikka Lasagna.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Chicken Tikka Lasagna</h5>
+                        <p class="card-text">Rs. 790</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Fettuccine Alfredo Pasta.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Fettuccine Alfredo Pasta</h5>
+                        <p class="card-text">Rs. 889</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+        <h4 id="list-item-pizza" class=" category-title text-center">Pizza</h4>
+       
+                <!-- products -->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Chicken Supreme.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Chicken Supreme</h5>
+                        <p class="card-text">Rs. 450</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Chicken Fajita.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Chicken Fajita </h5>
+                        <p class="card-text">Rs. 450</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Afghani Feast.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Afghani Feast</h5>
+                        <p class="card-text">Rs. 540</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="./imgs/Chicken Malai.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Chicken Malai</h5>
+                        <p class="card-text">Rs. 540</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+    <div class="container" id="list-item-sandwich">
+        <h4  class="category-title text-center">sandwich</h4>
+        <!-- products -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/clubsandwich.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Club Sandwich</h5>
+                <p class="card-text">Rs. 522 </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/Grilled Chicken Breast Sandwich.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Grilled Chicken Breast Sandwich</h5>
+                <p class="card-text">Rs. 766</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/Grilled Cheese Sandwich.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Grilled Cheese Sandwich</h5>
+                <p class="card-text">Rs. 550</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imgs/hunter sandwich.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hunter Beef Sandwich</h5>
+                <p class="card-text">Rs. 850</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- cart ------------------------------------------------------------------------------->
+
+<!-- cart ------------------------------------------------------------------------------->
+
+<div class="col-4 cart-title rounded-top">
+  <div class="container  sticky-top">
+  <!-- <img src="cart.svg" alt="cartlogo"> -->
+  <h3><i class="bi bi-cart"></i>Cart</h3>
+ 
+  <div class="row" id="cart-head">
+
+<!-- <ul  >
+<li >Item</li>
+<li >Price</li>
+<li >Qty</li>
+<li >Subtotal</li>
+</ul> -->
+    <div class="col-4 text-end">
+      <p>Items</p>
+    </div>
+
+    <div class="col-4 text-end">
+      <p>Qty</p>
+    </div>
+
+    <div class="col-2 text-end">
+      <p>Price</p>
+    </div>
+
+  </div>
+
+  
+
+  <div class="card">
+    <div class="card-body p-4">
+
+      
+      <div class="card mt-2 mb-3 mb-lg-0">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+          <div class="d-flex flex-row align-items-center">
+          <!-- <div class="card rounded-3 mb-3">
+            <div class="card-body p-1">
+              <div class="row d-flex justify-content-between align-items-center">
+                 -->
+                <div class="ms-3">
+                  <h8><i>Double Decker Chicken Burger</i><h8>
+                  
+                </div>
+
+                <div class="col-5  d-flex">
+                  <button class="btn btn-link px-1"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+  
+                  <input id="quantity-burger" min="0" name="quantity" value="0" type="number"
+                    class="form-control form-control-sm" data-price="540" />
+  
+                  <button class="btn btn-link px-1"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+                </div>
+                <div class="col-md-2  ">
+                  <p class="mb-0">Rs. 540</p>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card mb-3 mb-lg-0">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+              <!-- <div class="card rounded-3 mb-3">
+                <div class="card-body p-1">
+                  <div class="row d-flex justify-content-between align-items-center">
+                     -->
+                     <div class="ms-3">
+                      <h8><i>Chicken Cheese Burger</i><h8>
+                      
+                    </div>
+                    <div class="col-5  d-flex">
+                      <button class="btn btn-link px-1"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <i class="bi bi-dash-lg"></i>
+                      </button>
+      
+                      <input id="quantity-chicken" min="0" name="quantity" value="0" type="number"
+                        class="form-control form-control-sm" data-price="360" />
+      
+                      <button class="btn btn-link px-1"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                        <i class="bi bi-plus-lg"></i>
+                      </button>
+                    </div>
+                    <div class="col-md-2  ">
+                      <p class="mb-0">Rs. 360</p>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
+
+          
+
+  <hr class="my-4">
+  
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-2"><i>Subtotal:</i> <span id="subtotal">Rs.0.00</span></p>
+                  </div>
+
+
+                  <div class="d-flex justify-content-between mb-4">
+                    <p class="mb-2"><i>Total (Incl. 10% tax):</i> <span id="total">Rs.0.00</span></p>
+                  </div>
+
+                  <button type="button" class="btn btn-info btn-block btn-lg" id="checkoutButton">
+                    <div class="d-flex justify-content-between">
+                      <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                    </div>
+                  </button>
+                
+                
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- <div class="container-fluid">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+      <img src="o (1) copy.png" height="30" width="24" alt="logo">
+    </a>
+    <span class="mb-3 mb-md-0 text-body-secondary">© 2023 RestoTrack, Inc</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+  </ul>
+</footer>
+</div> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script>
+// Function to update subtotal and total
+function updateSubtotal() {
+  // Get the quantity input elements and total element
+  const quantityInputs = document.querySelectorAll('input[name="quantity"]');
+  const subtotalElement = document.getElementById('subtotal');
+  const totalElement = document.getElementById('total');
+
+  let subtotal = 0;
+
+  // Calculate subtotal for each item
+  quantityInputs.forEach(input => {
+    const quantity = parseInt(input.value);
+    const price = parseInt(input.getAttribute('data-price'));
+    subtotal += quantity * price;
+  });
+
+  // Calculate the total including taxes (you can adjust the tax rate as needed)
+  const taxRate = 0.1; // 10% tax rate
+  const tax = subtotal * taxRate;
+  const total = subtotal + tax;
+
+  // Update the subtotal and total elements with the calculated values
+  subtotalElement.textContent = `Rs ${subtotal.toFixed(2)}`;
+  totalElement.textContent = `Rs ${total.toFixed(2)}`;
+}
+
+// Attach event listeners to quantity input elements for change events
+const quantityInputs = document.querySelectorAll('input[name="quantity"]');
+quantityInputs.forEach(input => {
+  input.addEventListener('change', updateSubtotal);
+});
+
+// Add an event listener to the "Checkout" button
+const checkoutButton = document.getElementById('checkoutButton');
+checkoutButton.addEventListener('click', () => {
+  // You can add your checkout logic here if needed
+  // Call updateSubtotal again in case there are any changes before checkout
+  updateSubtotal();
+});
+
+// Call updateSubtotal initially to calculate the initial subtotal and total
+updateSubtotal();
+</script>
+
+
+
+</body>
+
+</html>
