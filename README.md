@@ -52,15 +52,15 @@ To set up the RestoTrack system on your local machine, follow the steps below:
 
 
 3.**Set up the database**:
-```bash
-   python manage.py migrate
+   ```bash
+  python manage.py migrate
 
 4.**Create a superuser (admin)**:
-```bash
+  ```bash
   python manage.py createsuperuser
 
 5. **Run the development server**:
-```bash
+   ```bash
    python manage.py runserver
 
 6. **Open your web browser and navigate to http://127.0.0.1:8000 to access the system**.
