@@ -39,31 +39,39 @@ RestoTrack is a comprehensive restaurant management system designed to streamlin
 
 To set up the RestoTrack system on your local machine, follow the steps below:
 
-1. Clone the repository:
+## Installation and Setup
+
+1. **Install the required dependencies**:
+   ```bash
+   pip install -r requirements.txt
+
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/restotrack.git
    cd restotrack
 Install the required dependencies:
 
-bash
-Copy code
-pip install -r requirements.txt
-Set up the database:
+1. **Install the required dependencies**:
+   ```bash
+   pip install -r requirements.txt
 
-bash
-Copy code
+
+2.**Set up the database**:
+
+```bash
 python manage.py migrate
-Create a superuser (admin):
 
-bash
-Copy code
+3.**Create a superuser (admin)**:
+
+```bash
 python manage.py createsuperuser
-Run the development server:
 
-bash
-Copy code
+4. **Run the development server**:
+
+```bash
 python manage.py runserver
-Open your web browser and navigate to http://127.0.0.1:8000 to access the system.
+
+5. **Open your web browser and navigate to http://127.0.0.1:8000 to access the system**.
 
 ## Usage
 
